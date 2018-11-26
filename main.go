@@ -44,7 +44,14 @@ func main() {
 	r := bufio.NewReader(os.Stdin)
 	line, err := r.ReadString('\n')
 	for err == nil {
-		fmt.Fprint(os.Stdout, KeywordsToUpper(line))
+		// ignore comments
+		if strings.HasPrefix(line, "--") {
+			fmt.Fprint(os.Stdout, line)
+		//	convert code
+		} else {
+			fmt.Fprint(os.Stdout, KeywordsToUpper(line))
+		}
+		// advance reader
 		line, err = r.ReadString('\n')
 	}
 	if err != io.EOF {

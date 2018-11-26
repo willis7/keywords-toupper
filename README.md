@@ -1,6 +1,6 @@
 # SQL KEYWORDS TO UPPER
 
-Simple app to convert SQL keywords to upercase.
+Simple app to convert SQL keywords to uppercase.
 
 ## Build
 
